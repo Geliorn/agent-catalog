@@ -1,0 +1,11 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "agent-catalog/catalog-stats",
+	"title": "Каталог: цифры доверия",
+	"category": "widgets",
+	"description": "Живая строка показателей каталога — собрано репозиториев, тем и тегов, суммарно звёзд GitHub. Данные считаются из базы, звёзды кэшируются.",
+	"supports": { "html": false, "align": ["wide", "full"] },
+	"render": "file:./render.php",
+	"editorScript": "file:./index.js"
+}

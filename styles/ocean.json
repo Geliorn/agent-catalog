@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Океан",
+	"settings": {
+		"color": {
+			"palette": [
+				{ "slug": "base", "name": "Base", "color": "#FFFFFF" },
+				{ "slug": "base-2", "name": "Background", "color": "#F5F9FB" },
+				{ "slug": "contrast", "name": "Text", "color": "#13232E" },
+				{ "slug": "contrast-2", "name": "Text (dim)", "color": "#5B7688" },
+				{ "slug": "light", "name": "Border", "color": "#D9E6EC" },
+				{ "slug": "accent", "name": "Accent", "color": "#1D6FA5" },
+				{ "slug": "accent-2", "name": "Accent (soft)", "color": "#E3EFF6" }
+			]
+		}
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Терракота",
+	"settings": {
+		"color": {
+			"palette": [
+				{ "slug": "base", "name": "Base", "color": "#FFFFFF" },
+				{ "slug": "base-2", "name": "Background", "color": "#FBF6F2" },
+				{ "slug": "contrast", "name": "Text", "color": "#2E211A" },
+				{ "slug": "contrast-2", "name": "Text (dim)", "color": "#836A5C" },
+				{ "slug": "light", "name": "Border", "color": "#EDDDD1" },
+				{ "slug": "accent", "name": "Accent", "color": "#B0552E" },
+				{ "slug": "accent-2", "name": "Accent (soft)", "color": "#F5E6DC" }
+			]
+		}
+	}
+}

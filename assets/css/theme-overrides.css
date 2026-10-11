@@ -1,0 +1,50 @@
+/* Agent Catalog theme — small, deliberate patches to plugin CSS.
+ * Everything else is left to theme.json; see docs/stack-decisions.md
+ * for why plugin CSS defers colors/typography/spacing to the theme.
+ */
+
+/* partner-catalog's type pill reads var(--wp--preset--color--contrast) for its
+ * background, but "contrast" is the body-text color in this theme (has to be,
+ * since styles.color.text is bound to it) — not the brand green. Recolor the
+ * pill here instead of changing what "contrast" means globally. */
+.pc-type-pill a {
+	background: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base);
+}
+
+/* core/search's width is a fixed inline style (lagr/hero-search sets 70%,
+ * a sane value on desktop) — on narrow phones that leaves too little room
+ * for the input next to the button, clipping the placeholder text mid-word.
+ * Found live on the homepage hero at 390px width. `!important` is required
+ * to beat the inline `style="width:70%"` the block renders with. */
+@media (max-width: 600px) {
+	.lagr-hero .wp-block-search__inside-wrapper {
+		width: 100% !important;
+	}
+}
+.wp-block-search__input {
+	text-overflow: ellipsis;
+}
+
+/* The pill's rounded corners (border-radius:999px, set via theme.json's
+ * core/search style) live on .wp-block-search__inside-wrapper, but the
+ * white input background is a separate element sitting inside it — with
+ * nothing clipping to the wrapper's rounded edge, the input's own square
+ * corners poked out past it at the top-left/bottom-left. Found live on
+ * the homepage hero. */
+.wp-block-search__inside-wrapper {
+	overflow: hidden;
+}
+
+/* core/read-more's block supports cover border/padding/color/typography but
+ * not `display` — it's an inline text link by default, which left the
+ * pill-shaped border set on it (llm-agent-github-repos and partner-catalog
+ * cards' "Подробно/Подробнее →" link) squashed around just the text
+ * baseline instead of wrapping it like a button. Themed here rather than in
+ * either plugin's CSS since both use the same unmodified core block. */
+.wp-block-read-more {
+	display: inline-block;
+}
+.wp-block-read-more:hover {
+	background: color-mix(in srgb, currentColor 8%, transparent);
+}

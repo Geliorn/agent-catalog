@@ -1,0 +1,155 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"defaultDuotone": false,
+			"palette": [
+				{ "slug": "base", "name": "Base", "color": "#FFFFFF" },
+				{ "slug": "base-2", "name": "Background", "color": "#F7F7F5" },
+				{ "slug": "contrast", "name": "Text", "color": "#1C1C1A" },
+				{ "slug": "contrast-2", "name": "Text (dim)", "color": "#6B6A63" },
+				{ "slug": "light", "name": "Border", "color": "#E3E2DD" },
+				{ "slug": "accent", "name": "Accent", "color": "#2F5D4F" },
+				{ "slug": "accent-2", "name": "Accent (soft)", "color": "#E7EFEC" }
+			]
+		},
+		"layout": {
+			"contentSize": "1040px",
+			"wideSize": "1220px"
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"units": [ "%", "px", "em", "rem", "vh", "vw" ],
+			"spacingSizes": [
+				{ "slug": "20", "name": "1", "size": "0.5rem" },
+				{ "slug": "30", "name": "2", "size": "0.75rem" },
+				{ "slug": "40", "name": "3", "size": "1rem" },
+				{ "slug": "50", "name": "4", "size": "1.5rem" },
+				{ "slug": "60", "name": "5", "size": "2.5rem" },
+				{ "slug": "70", "name": "6", "size": "4rem" },
+				{ "slug": "80", "name": "7", "size": "6rem" }
+			]
+		},
+		"typography": {
+			"fluid": false,
+			"fontFamilies": [
+				{
+					"slug": "inter",
+					"name": "Inter",
+					"fontFamily": "\"Inter\", -apple-system, \"Segoe UI\", sans-serif",
+					"fontFace": [
+						{ "fontFamily": "Inter", "fontWeight": "100 900", "fontStyle": "normal", "fontStretch": "normal", "src": [ "file:./assets/fonts/inter/inter-latin.woff2" ] },
+						{ "fontFamily": "Inter", "fontWeight": "100 900", "fontStyle": "normal", "fontStretch": "normal", "src": [ "file:./assets/fonts/inter/inter-latin-ext.woff2" ] },
+						{ "fontFamily": "Inter", "fontWeight": "100 900", "fontStyle": "normal", "fontStretch": "normal", "src": [ "file:./assets/fonts/inter/inter-cyrillic.woff2" ] },
+						{ "fontFamily": "Inter", "fontWeight": "100 900", "fontStyle": "normal", "fontStretch": "normal", "src": [ "file:./assets/fonts/inter/inter-cyrillic-ext.woff2" ] }
+					]
+				},
+				{
+					"slug": "jetbrains-mono",
+					"name": "JetBrains Mono",
+					"fontFamily": "\"JetBrains Mono\", ui-monospace, Menlo, monospace",
+					"fontFace": [
+						{ "fontFamily": "JetBrains Mono", "fontWeight": "100 900", "fontStyle": "normal", "fontStretch": "normal", "src": [ "file:./assets/fonts/jetbrains-mono/jetbrains-mono-latin.woff2" ] },
+						{ "fontFamily": "JetBrains Mono", "fontWeight": "100 900", "fontStyle": "normal", "fontStretch": "normal", "src": [ "file:./assets/fonts/jetbrains-mono/jetbrains-mono-latin-ext.woff2" ] },
+						{ "fontFamily": "JetBrains Mono", "fontWeight": "100 900", "fontStyle": "normal", "fontStretch": "normal", "src": [ "file:./assets/fonts/jetbrains-mono/jetbrains-mono-cyrillic.woff2" ] },
+						{ "fontFamily": "JetBrains Mono", "fontWeight": "100 900", "fontStyle": "normal", "fontStretch": "normal", "src": [ "file:./assets/fonts/jetbrains-mono/jetbrains-mono-cyrillic-ext.woff2" ] }
+					]
+				}
+			],
+			"fontSizes": [
+				{ "slug": "small", "name": "Small", "size": "0.8125rem" },
+				{ "slug": "medium", "name": "Medium", "size": "1rem" },
+				{ "slug": "large", "name": "Large", "size": "1.375rem" },
+				{ "slug": "x-large", "name": "X-Large", "size": "1.875rem" },
+				{ "slug": "xx-large", "name": "XX-Large", "size": "2.5rem" }
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--base-2)",
+			"text": "var(--wp--preset--color--contrast)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--inter)",
+			"fontSize": "var(--wp--preset--font-size--medium)",
+			"lineHeight": "1.55"
+		},
+		"spacing": {
+			"blockGap": "1.25rem",
+			"padding": {
+				"left": "var(--wp--preset--spacing--40)",
+				"right": "var(--wp--preset--spacing--40)"
+			}
+		},
+		"elements": {
+			"link": {
+				"color": { "text": "var(--wp--preset--color--accent)" },
+				"typography": { "textDecoration": "none" },
+				":hover": {
+					"typography": { "textDecoration": "underline" }
+				}
+			},
+			"heading": {
+				"typography": { "fontWeight": "600", "lineHeight": "1.25" },
+				"color": { "text": "var(--wp--preset--color--contrast)" }
+			},
+			"button": {
+				"border": { "radius": "999px" },
+				"spacing": { "padding": { "top": "0.7rem", "bottom": "0.7rem", "left": "1.4rem", "right": "1.4rem" } },
+				"typography": { "fontWeight": "600" },
+				"color": {
+					"background": "var(--wp--preset--color--accent)",
+					"text": "var(--wp--preset--color--base)"
+				}
+			}
+		},
+		"blocks": {
+			"core/button": {
+				"variations": {
+					"outline": {
+						"border": { "radius": "999px", "width": "1px", "color": "var(--wp--preset--color--light)" },
+						"color": {
+							"background": "transparent",
+							"text": "var(--wp--preset--color--contrast)"
+						}
+					}
+				}
+			},
+			"core/code": {
+				"typography": { "fontFamily": "var(--wp--preset--font-family--jetbrains-mono)", "fontSize": "0.85rem" },
+				"color": { "background": "#141412", "text": "#D9E6E0" },
+				"border": { "radius": "6px" },
+				"spacing": { "padding": { "top": "1rem", "bottom": "1rem", "left": "1.25rem", "right": "1.25rem" } }
+			},
+			"core/search": {
+				"border": { "radius": "999px" }
+			},
+			"core/site-title": {
+				"typography": { "fontWeight": "700", "fontSize": "1.0625rem" }
+			},
+			"core/navigation": {
+				"typography": { "fontSize": "var(--wp--preset--font-size--small)" },
+				"color": { "text": "var(--wp--preset--color--contrast-2)" }
+			},
+			"core/post-terms": {
+				"typography": { "fontSize": "var(--wp--preset--font-size--small)" }
+			},
+			"core/separator": {
+				"color": { "text": "var(--wp--preset--color--light)" }
+			}
+		}
+	},
+	"templateParts": [
+		{ "name": "header", "title": "Header", "area": "header" },
+		{ "name": "footer", "title": "Footer", "area": "footer" }
+	],
+	"customTemplates": [
+		{ "name": "page-no-title", "title": "Page (no title)", "postTypes": [ "page" ] }
+	]
+}

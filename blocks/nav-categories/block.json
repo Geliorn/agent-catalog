@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "agent-catalog/nav-categories",
+	"title": "Шапка: выпадающее меню категорий",
+	"category": "widgets",
+	"description": "Выпадающее меню «Категории» для шапки — топ-темы со счётчиком и ссылка на все репозитории. Данные подставляются на странице.",
+	"attributes": {
+		"taxonomy": { "type": "string", "default": "repo_topic" },
+		"number": { "type": "number", "default": 12 },
+		"label": { "type": "string", "default": "Категории" }
+	},
+	"supports": { "html": false },
+	"render": "file:./render.php",
+	"editorScript": "file:./index.js"
+}

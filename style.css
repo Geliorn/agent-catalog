@@ -1,0 +1,53 @@
+/*
+Theme Name: Agent Catalog
+Theme URI: https://llm-agent.ru
+Author: llm-agent.ru
+Description: Standalone block theme for GitHub-repo / partner-catalog directory sites. Forked from WordPress's Twenty Twenty-Five, with no dependency on it. Supplies the color, typography and spacing tokens the llm-agent-github-repos and partner-catalog plugins' block patterns expect.
+Requires at least: 6.7
+Requires PHP: 8.0
+Version: 1.3.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: full-site-editing, block-patterns, custom-colors, custom-logo, custom-menu, blog
+*/
+
+a {
+	color: inherit;
+}
+
+a:not(.wp-element-button) {
+	text-decoration-thickness: 1px;
+}
+
+:where(a:focus) {
+	outline-width: 2px;
+	outline-style: solid;
+}
+
+/* Prevents button and control labels from wrapping/overflowing awkwardly. */
+:where(.wp-block-navigation) .wp-block-navigation-item a {
+	white-space: nowrap;
+}
+
+/* Avoid widows/orphans in long-form copy. */
+p,
+li {
+	text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+.more-link {
+	display: block;
+}
+
+pre {
+	overflow-x: auto;
+}

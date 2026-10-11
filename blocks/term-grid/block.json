@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "agent-catalog/term-grid",
+	"title": "Каталог: сетка категорий",
+	"category": "widgets",
+	"description": "Сетка карточек тем/тегов с числом репозиториев, каждая ведёт в архив термина. Точка входа «выбрать по категории».",
+	"attributes": {
+		"taxonomy": { "type": "string", "default": "repo_topic" },
+		"number": { "type": "number", "default": 12 },
+		"appendTaxonomy": { "type": "string", "default": "" },
+		"appendNumber": { "type": "number", "default": 0 }
+	},
+	"supports": { "html": false, "align": ["wide", "full"] },
+	"render": "file:./render.php",
+	"editorScript": "file:./index.js"
+}

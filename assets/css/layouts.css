@@ -1,0 +1,586 @@
+/* Agent Catalog — homepage compositions, card style variants and the two
+ * small catalog blocks (stats band, term grid). Kept out of theme-overrides.css
+ * (which is only tiny plugin-CSS patches) because this is the theme's own
+ * layout layer: everything here is theme-portable — colors/sizes come from
+ * theme.json preset vars or color-mix against them, so the same markup adapts
+ * to all 8 palette style variations across the 10-site rollout.
+ *
+ * Card variants restyle the plugin's stable .lagr-card partial without
+ * touching the plugin: they hang off the `is-style-*` class WP adds to the
+ * wrapping core/query block (register_block_style in functions.php), so a
+ * site picks a card look from the Query block's Styles panel — no forked
+ * card markup, no plugin edit.
+ */
+
+/* ============================================================ section heads */
+/* The old front-page put section headings in the constrained (1040) flow while
+ * their card grids were alignwide (1220) — the heading sat ~90px inside the
+ * left edge of the cards it labelled (the "асимметрия" reported). Every
+ * homepage section now shares one alignwide column, and the head row below
+ * aligns the title with the grid and parks a "see all" link opposite it. */
+.lagr-section-head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+	margin-bottom: 14px;
+}
+.lagr-section-head > :where(h1, h2, h3, h4) {
+	margin: 0;
+}
+.lagr-section-more a,
+a.lagr-section-more {
+	font-size: var(--wp--preset--font-size--small, 0.8125rem);
+	color: var(--wp--preset--color--accent);
+	text-decoration: none;
+	white-space: nowrap;
+}
+.lagr-section-more a:hover,
+a.lagr-section-more:hover {
+	text-decoration: underline;
+}
+/* A small uppercase eyebrow above a section title (editorial / featured). */
+.lagr-eyebrow {
+	font-size: 0.6875rem;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	font-weight: 600;
+	color: var(--wp--preset--color--accent);
+	margin: 0 0 2px;
+}
+
+/* ============================================================= stats band */
+/* agent-catalog/catalog-stats — the credibility row every mature catalog runs
+ * (Smithery "uses", Glama counts, MCP-Catalog totals). Three live figures:
+ * repos collected, topics+tags, summed GitHub stars. */
+.lagr-catalog-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 40px;
+	background: var(--wp--preset--color--accent-2);
+	border: 1px solid var(--wp--preset--color--light);
+	border-radius: 8px;
+	padding: 20px 24px;
+}
+.lagr-catalog-stats .lagr-stat {
+	flex: 1;
+	min-width: 180px;
+}
+.lagr-catalog-stats .lagr-stat-num {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: 700;
+	line-height: 1.1;
+	color: var(--wp--preset--color--accent);
+	font-variant-numeric: tabular-nums;
+}
+.lagr-catalog-stats .lagr-stat-label {
+	font-size: var(--wp--preset--font-size--small, 0.8125rem);
+	color: var(--wp--preset--color--contrast-2);
+}
+
+/* ========================================================== trending chips */
+/* The hero's "Популярное:" quick links + any inline chip row. core/tag-cloud
+ * is themed to pills in the plugin CSS (.lagr-hero-topics); this covers a
+ * hand-authored chip row (paragraph of links) used by some homepage variants. */
+.lagr-chip-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	font-size: var(--wp--preset--font-size--small, 0.8125rem);
+	color: var(--wp--preset--color--contrast-2);
+}
+.lagr-chip-row a {
+	text-decoration: none;
+	color: var(--wp--preset--color--contrast);
+	background: color-mix(in srgb, currentColor 8%, transparent);
+	border-radius: 999px;
+	padding: 4px 11px;
+}
+.lagr-chip-row a:hover {
+	color: var(--wp--preset--color--accent);
+}
+
+/* ===================================================== mixed search results */
+/* The three stacked search blocks (repos / partners / articles). Each heading
+ * carries its match count; an empty block shows the count (0) and this note
+ * instead of vanishing, so the three-block layout stays put across queries. */
+.lagr-result-count {
+	font-size: var(--wp--preset--font-size--small, 0.8125rem);
+	font-weight: 400;
+	color: var(--wp--preset--color--contrast-2);
+	vertical-align: middle;
+}
+.lagr-result-empty {
+	color: var(--wp--preset--color--contrast-2);
+	font-style: italic;
+}
+.lagr-result-list .wp-block-post-title {
+	margin: 0;
+}
+
+/* ============================================================ term grid */
+/* agent-catalog/term-grid — Glama-style category cards: a term's name + how
+ * many repos carry it, linking to that term archive. Real term data, rendered
+ * fresh (not a frozen snapshot). */
+/* Fixed 5 columns → with the 25-card cap (maxTotal) the block is a stable
+ * 5×5 that never reflows as category/tag counts change. minmax(0,1fr) keeps a
+ * long term name from blowing a column wider than its share. */
+.lagr-term-grid {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 12px;
+}
+.lagr-term-card {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 14px 16px;
+	border: 1px solid var(--wp--preset--color--light);
+	border-radius: 8px;
+	background: var(--wp--preset--color--base);
+	text-decoration: none;
+	color: inherit;
+	transition: border-color 0.12s ease, transform 0.12s ease;
+}
+.lagr-term-card:hover {
+	border-color: var(--wp--preset--color--accent);
+	transform: translateY(-1px);
+}
+.lagr-term-card .lagr-term-name {
+	font-weight: 600;
+	font-size: 0.9375rem;
+}
+.lagr-term-card .lagr-term-count {
+	font-size: var(--wp--preset--font-size--small, 0.8125rem);
+	color: var(--wp--preset--color--contrast-2);
+	font-variant-numeric: tabular-nums;
+}
+/* Curated topics mixed into the same grid as tags — accent frame + soft fill
+ * so the few categories read as primary without a separate heading. */
+.lagr-term-card.lagr-term-cat {
+	border-color: var(--wp--preset--color--accent);
+	background: var(--wp--preset--color--accent-2);
+}
+.lagr-term-card.lagr-term-cat .lagr-term-name {
+	color: var(--wp--preset--color--accent);
+}
+
+/* ================================================== homepage blog ("Статьи") */
+/* Blog cards mirror the repo cards: title, excerpt, then a single wrapping pill
+ * row at the foot — the category as an accent pill (.lagr-topic-pill) followed
+ * by the tags (.lagr-tag-pill, both from the plugin CSS). Column flex +
+ * excerpt flex:1 pushes that row to a common baseline so the 3 cards keep even
+ * feet whatever the excerpt length. */
+.lagr-blog-card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+	height: 100%;
+}
+/* The group's constrained layout auto-centers short children (margin-inline:
+ * auto) — cancel it so the title and the button sit flush left like the rest. */
+.lagr-blog-card > * {
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 100%;
+}
+.lagr-blog-card .wp-block-post-title {
+	margin: 0;
+	width: 100%;
+}
+.lagr-blog-card .wp-block-post-excerpt {
+	flex: 1;
+	margin: 0;
+}
+/* Card order: title → rubric/tags → description → "Читать" button. The meta
+ * row sits right under the title; the excerpt flexes to fill so the button
+ * lands at a common foot across the 3 cards. */
+/* Category + tags flow as ONE continuous pill row — the two post-terms blocks
+ * are set inline so their pills wrap together instead of each taking a line. */
+.lagr-blog-meta .wp-block-post-terms {
+	display: inline;
+}
+/* Smaller, tighter pills than on the repo cards — the blog grid is denser. */
+.lagr-blog-card .lagr-topic-pill a,
+.lagr-blog-card .lagr-tag-pill a {
+	font-size: 0.75rem;
+	padding: 1px 8px;
+}
+/* "Читать" rendered as a small pill button, parked at the card foot. */
+.lagr-blog-card .lagr-blog-more {
+	margin-top: auto;
+	align-self: flex-start;
+	display: inline-block;
+	padding: 6px 14px;
+	border: 1px solid var(--wp--preset--color--accent);
+	border-radius: 999px;
+	font-size: var(--wp--preset--font-size--small, 0.8125rem);
+	color: var(--wp--preset--color--accent);
+	text-decoration: none;
+	transition: background-color 0.12s ease, color 0.12s ease;
+}
+.lagr-blog-card .lagr-blog-more:hover,
+.lagr-blog-card .lagr-blog-more:focus-visible {
+	background: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base);
+}
+
+/* ============================================= single article (blog post) */
+/* Rubric as an accent pill above the title, an avatar byline, and a pill row
+ * of tags at the foot — the article mirrors the card's pill language and the
+ * repo single page. Pills themselves come from the plugin CSS
+ * (.lagr-topic-pill / .lagr-tag-pill). */
+.lagr-article-eyebrow {
+	margin: 0 0 10px;
+}
+.lagr-article-byline {
+	gap: 12px;
+	align-items: center;
+}
+.lagr-byline-avatar,
+.lagr-byline-avatar img {
+	margin: 0;
+	border-radius: 999px;
+	display: block;
+}
+.lagr-byline-meta {
+	gap: 2px;
+}
+.lagr-byline-name,
+.lagr-byline-name a {
+	font-weight: 600;
+	text-decoration: none;
+	color: inherit;
+}
+.lagr-byline-name a:hover {
+	text-decoration: underline;
+}
+.lagr-byline-date {
+	margin: 0;
+	color: var(--wp--preset--color--contrast-2);
+}
+/* "Теги:" label and the pills flow as one wrapping line (both inline), so the
+ * label sits in front of the pills instead of on its own row above them. */
+.lagr-article-tags-label {
+	display: inline;
+	margin: 0 6px 0 0;
+	font-weight: 600;
+	color: var(--wp--preset--color--contrast-2);
+}
+.lagr-article-tags .wp-block-post-terms {
+	display: inline;
+}
+
+/* ===================================================== card variant: compact */
+/* Denser cards, more per screen (skills.sh / Smithery leaderboards). Same
+ * markup, trimmed: no free-tag row, tighter spacing, 1-line description. */
+.is-style-lagr-cards-compact .lagr-card {
+	padding: 12px 14px;
+	gap: 6px;
+	border-radius: 6px;
+}
+.is-style-lagr-cards-compact .lagr-card .wp-block-post-title {
+	font-size: 0.9375rem;
+	min-height: 0;
+}
+.is-style-lagr-cards-compact .lagr-card-desc {
+	-webkit-line-clamp: 1;
+	min-height: 0;
+	font-size: var(--wp--preset--font-size--small, 0.8125rem);
+}
+.is-style-lagr-cards-compact .lagr-tag-pill-clamped {
+	display: none;
+}
+.is-style-lagr-cards-compact .lagr-card-stats {
+	padding-top: 6px;
+	margin-top: 2px;
+	column-gap: 12px;
+}
+
+/* ===================================================== card variant: minimal */
+/* Flat rows — no border/background, hairline divider. Richer than a bare
+ * title+stars line: it keeps the topic, a fuller (3-line) description and the
+ * tags, and only drops the rating and the license/button footer so it still
+ * reads as a list, not a card. Pairs with a single-column query. */
+.is-style-lagr-cards-minimal .lagr-card {
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid var(--wp--preset--color--light);
+	padding: 14px 0;
+	gap: 6px;
+}
+.is-style-lagr-cards-minimal .lagr-rating,
+.is-style-lagr-cards-minimal .lagr-card > .wp-block-group:last-child {
+	display: none;
+}
+.is-style-lagr-cards-minimal .lagr-card .wp-block-post-title {
+	min-height: 0;
+}
+.is-style-lagr-cards-minimal .lagr-card-desc {
+	-webkit-line-clamp: 3;
+	min-height: 0;
+}
+/* Keep the tag row to a single line so a long tag list doesn't blow the row
+ * height out — the full set is still one click away on the repo page. */
+.is-style-lagr-cards-minimal .lagr-tag-pill-clamped {
+	-webkit-line-clamp: 1;
+	min-height: 0;
+}
+.is-style-lagr-cards-minimal .lagr-card-stats {
+	border-top: none;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+/* ==================================================== card variant: featured */
+/* Big, prominent — accent frame, larger type, filled CTA. For a top-1 pick or
+ * a promoted slot (MCP Market featured). Best at 1–2 columns. */
+.is-style-lagr-cards-featured .lagr-card {
+	padding: 24px;
+	gap: 12px;
+	border-color: var(--wp--preset--color--accent);
+	box-shadow: 0 8px 28px color-mix(in srgb, var(--wp--preset--color--accent) 12%, transparent);
+}
+.is-style-lagr-cards-featured .lagr-card .wp-block-post-title {
+	font-size: 1.375rem;
+	min-height: 0;
+}
+.is-style-lagr-cards-featured .lagr-card-desc {
+	font-size: var(--wp--preset--font-size--medium, 1rem);
+	-webkit-line-clamp: 3;
+}
+.is-style-lagr-cards-featured .lagr-card .wp-block-read-more {
+	background: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base) !important;
+	border-color: var(--wp--preset--color--accent) !important;
+	font-weight: 600;
+}
+
+/* ================================================ leaderboard numbering */
+/* Ranked "Top N" — a CSS counter prefixes each card with its position, turning
+ * a score-ordered query into a real leaderboard (skills.sh) without the query
+ * loop having to emit numbers. Lives on a wrapper class the leaderboard
+ * homepage pattern sets, not a global block style. */
+.lagr-leaderboard .lagr-tile-grid,
+.lagr-leaderboard .wp-block-post-template {
+	counter-reset: lagr-rank;
+}
+.lagr-leaderboard .lagr-card {
+	position: relative;
+	counter-increment: lagr-rank;
+	padding-left: 46px;
+}
+.lagr-leaderboard .lagr-card::before {
+	content: counter(lagr-rank);
+	position: absolute;
+	top: 14px;
+	left: 12px;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 999px;
+	background: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base);
+	font-size: 0.75rem;
+	font-weight: 700;
+	font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================ header */
+/* Three balanced zones: logo (left) · menu (centre) · search (right). The
+ * old layout left the logo alone on the left and crammed everything right,
+ * with a big void in the middle. */
+.lagr-header-menu {
+	display: flex;
+	align-items: center;
+	gap: 8px 20px;
+}
+.lagr-header-menu .wp-block-navigation {
+	gap: 8px 20px;
+}
+.lagr-header-search {
+	margin: 0;
+	max-width: 300px;
+}
+.lagr-header-search .wp-block-search__inside-wrapper {
+	border: 1px solid var(--wp--preset--color--light);
+	border-radius: 999px;
+	overflow: hidden;
+	background: var(--wp--preset--color--base-2);
+}
+.lagr-header-search input.wp-block-search__input {
+	min-width: 190px;
+	border: none;
+	background: transparent;
+	padding: 5px 12px;
+	font-size: 0.875rem;
+}
+
+/* ============================================ header: categories dropdown */
+/* CSS-only <details> dropdown. .lagr-header is the positioning context on
+ * mobile (full-width panel); on desktop the panel anchors to the toggle. */
+.lagr-header {
+	position: relative;
+}
+.lagr-cat-dd {
+	position: relative;
+}
+.lagr-cat-dd > summary.lagr-cat-dd-toggle {
+	list-style: none;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 4px 2px;
+	font-size: 0.9375rem;
+	color: var(--wp--preset--color--contrast);
+	white-space: nowrap;
+}
+.lagr-cat-dd > summary::-webkit-details-marker {
+	display: none;
+}
+.lagr-cat-dd > summary.lagr-cat-dd-toggle::after {
+	content: "▾";
+	font-size: 0.7em;
+	transition: transform 0.15s ease;
+}
+.lagr-cat-dd[open] > summary.lagr-cat-dd-toggle::after {
+	transform: rotate(180deg);
+}
+.lagr-cat-dd > summary.lagr-cat-dd-toggle:hover {
+	color: var(--wp--preset--color--accent);
+}
+.lagr-cat-dd-menu {
+	position: absolute;
+	top: calc(100% + 8px);
+	right: 0;
+	z-index: 50;
+	min-width: 230px;
+	max-width: calc(100vw - 32px);
+	max-height: 70vh;
+	overflow-y: auto;
+	background: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--light);
+	border-radius: 10px;
+	box-shadow: 0 12px 32px color-mix(in srgb, var(--wp--preset--color--contrast) 12%, transparent);
+	padding: 12px 14px;
+}
+.lagr-cat-dd-menu .lagr-term-links {
+	gap: 1px;
+}
+.lagr-cat-dd-menu .lagr-term-links a {
+	display: flex;
+	justify-content: space-between;
+	gap: 14px;
+	padding: 6px 8px;
+	border-radius: 6px;
+}
+.lagr-cat-dd-menu .lagr-term-links a:hover {
+	background: var(--wp--preset--color--base-2);
+	text-decoration: none;
+}
+.lagr-cat-dd-all {
+	display: block;
+	margin-top: 8px;
+	padding-top: 10px;
+	border-top: 1px solid var(--wp--preset--color--light);
+	font-size: 0.8125rem;
+	color: var(--wp--preset--color--accent);
+	text-decoration: none;
+}
+.lagr-cat-dd-all:hover {
+	text-decoration: underline;
+}
+
+/* ============================================================ footer nav */
+.lagr-footer-cols {
+	gap: 24px 32px;
+}
+.lagr-footer-head {
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-weight: 600;
+	color: var(--wp--preset--color--contrast-2);
+	margin: 0 0 12px;
+}
+.lagr-term-links,
+.lagr-footer-links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+.lagr-term-links a,
+.lagr-footer-links a {
+	text-decoration: none;
+	color: var(--wp--preset--color--contrast);
+	font-size: 0.875rem;
+}
+.lagr-term-links a:hover,
+.lagr-footer-links a:hover {
+	color: var(--wp--preset--color--accent);
+	text-decoration: underline;
+}
+.lagr-term-links-count {
+	color: var(--wp--preset--color--contrast-2);
+	font-size: 0.75rem;
+	font-variant-numeric: tabular-nums;
+}
+.lagr-footer-bar .wp-block-site-title {
+	font-weight: 600;
+}
+.lagr-footer-bar .wp-block-site-title a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* ============================================================== responsive */
+@media (max-width: 782px) {
+	.lagr-catalog-stats {
+		gap: 14px 24px;
+		padding: 16px 18px;
+	}
+	.lagr-catalog-stats .lagr-stat-num {
+		font-size: 1.375rem;
+	}
+	.lagr-term-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.lagr-header-row {
+		row-gap: 12px;
+	}
+	/* Logo + menu share the first line (logo left, nav/hamburger right);
+	 * search drops to its own full-width line below. */
+	.lagr-header-menu {
+		gap: 8px 14px;
+	}
+	.lagr-header-search {
+		flex-basis: 100%;
+		max-width: none;
+	}
+	.lagr-header-search input.wp-block-search__input {
+		min-width: 0;
+		width: 100%;
+	}
+	.lagr-cat-dd {
+		position: static;
+	}
+	/* Full-width dropdown under the header on mobile (anchored to .lagr-header). */
+	.lagr-cat-dd-menu {
+		top: 100%;
+		left: 16px;
+		right: 16px;
+		min-width: 0;
+		max-width: none;
+	}
+}
