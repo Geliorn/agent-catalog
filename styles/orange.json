@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Апельсин",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "base-2",
+					"name": "Background",
+					"color": "#FEF6F0"
+				},
+				{
+					"slug": "contrast",
+					"name": "Text",
+					"color": "#141414"
+				},
+				{
+					"slug": "contrast-2",
+					"name": "Text (dim)",
+					"color": "#7D5846"
+				},
+				{
+					"slug": "light",
+					"name": "Border",
+					"color": "#F3E1D3"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#C2410C"
+				},
+				{
+					"slug": "accent-2",
+					"name": "Accent (soft)",
+					"color": "#FBE7DA"
+				}
+			]
+		}
+	}
+}

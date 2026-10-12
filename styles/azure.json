@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Лазурь",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "base-2",
+					"name": "Background",
+					"color": "#F3F8FE"
+				},
+				{
+					"slug": "contrast",
+					"name": "Text",
+					"color": "#141414"
+				},
+				{
+					"slug": "contrast-2",
+					"name": "Text (dim)",
+					"color": "#567189"
+				},
+				{
+					"slug": "light",
+					"name": "Border",
+					"color": "#D6E6F4"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#0C63C9"
+				},
+				{
+					"slug": "accent-2",
+					"name": "Accent (soft)",
+					"color": "#E1EFFD"
+				}
+			]
+		}
+	}
+}

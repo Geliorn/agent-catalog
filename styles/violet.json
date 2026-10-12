@@ -1,17 +1,45 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
-	"title": "Фиолет",
+	"title": "Виолет",
 	"settings": {
 		"color": {
 			"palette": [
-				{ "slug": "base", "name": "Base", "color": "#FFFFFF" },
-				{ "slug": "base-2", "name": "Background", "color": "#F8F6FB" },
-				{ "slug": "contrast", "name": "Text", "color": "#221B2E" },
-				{ "slug": "contrast-2", "name": "Text (dim)", "color": "#6E6280" },
-				{ "slug": "light", "name": "Border", "color": "#E4DEEC" },
-				{ "slug": "accent", "name": "Accent", "color": "#6B3FA0" },
-				{ "slug": "accent-2", "name": "Accent (soft)", "color": "#EEE7F5" }
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "base-2",
+					"name": "Background",
+					"color": "#FAF6FE"
+				},
+				{
+					"slug": "contrast",
+					"name": "Text",
+					"color": "#141414"
+				},
+				{
+					"slug": "contrast-2",
+					"name": "Text (dim)",
+					"color": "#685A80"
+				},
+				{
+					"slug": "light",
+					"name": "Border",
+					"color": "#EADFF7"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#7C3AED"
+				},
+				{
+					"slug": "accent-2",
+					"name": "Accent (soft)",
+					"color": "#F1E8FE"
+				}
 			]
 		}
 	}

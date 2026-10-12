@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Индиго",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "base-2",
+					"name": "Background",
+					"color": "#F5F5FD"
+				},
+				{
+					"slug": "contrast",
+					"name": "Text",
+					"color": "#141414"
+				},
+				{
+					"slug": "contrast-2",
+					"name": "Text (dim)",
+					"color": "#5E5B7B"
+				},
+				{
+					"slug": "light",
+					"name": "Border",
+					"color": "#E3E1F4"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#4F46E5"
+				},
+				{
+					"slug": "accent-2",
+					"name": "Accent (soft)",
+					"color": "#ECEBFE"
+				}
+			]
+		}
+	}
+}

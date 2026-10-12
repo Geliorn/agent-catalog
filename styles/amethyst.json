@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Аметист",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#1A1626"
+				},
+				{
+					"slug": "base-2",
+					"name": "Background",
+					"color": "#140F1F"
+				},
+				{
+					"slug": "contrast",
+					"name": "Text",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "contrast-2",
+					"name": "Text (dim)",
+					"color": "#A398B6"
+				},
+				{
+					"slug": "light",
+					"name": "Border",
+					"color": "#2C2640"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#A78BFA"
+				},
+				{
+					"slug": "accent-2",
+					"name": "Accent (soft)",
+					"color": "#271E3D"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Фуксия",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#1E1521"
+				},
+				{
+					"slug": "base-2",
+					"name": "Background",
+					"color": "#17101A"
+				},
+				{
+					"slug": "contrast",
+					"name": "Text",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "contrast-2",
+					"name": "Text (dim)",
+					"color": "#B498AD"
+				},
+				{
+					"slug": "light",
+					"name": "Border",
+					"color": "#322636"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#F472B6"
+				},
+				{
+					"slug": "accent-2",
+					"name": "Accent (soft)",
+					"color": "#3A1C2E"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Изумруд",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "base-2",
+					"name": "Background",
+					"color": "#F1FAF6"
+				},
+				{
+					"slug": "contrast",
+					"name": "Text",
+					"color": "#141414"
+				},
+				{
+					"slug": "contrast-2",
+					"name": "Text (dim)",
+					"color": "#4C7A69"
+				},
+				{
+					"slug": "light",
+					"name": "Border",
+					"color": "#D4EBE1"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#047857"
+				},
+				{
+					"slug": "accent-2",
+					"name": "Accent (soft)",
+					"color": "#DCF3EA"
+				}
+			]
+		}
+	}
+}

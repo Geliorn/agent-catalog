@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Изумрудная ночь",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#15181B"
+				},
+				{
+					"slug": "base-2",
+					"name": "Background",
+					"color": "#101315"
+				},
+				{
+					"slug": "contrast",
+					"name": "Text",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "contrast-2",
+					"name": "Text (dim)",
+					"color": "#9BA1A6"
+				},
+				{
+					"slug": "light",
+					"name": "Border",
+					"color": "#2A2E33"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#34D399"
+				},
+				{
+					"slug": "accent-2",
+					"name": "Accent (soft)",
+					"color": "#0E2D23"
+				}
+			]
+		}
+	}
+}

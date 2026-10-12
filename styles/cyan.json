@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Циан",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#0F1826"
+				},
+				{
+					"slug": "base-2",
+					"name": "Background",
+					"color": "#0A121E"
+				},
+				{
+					"slug": "contrast",
+					"name": "Text",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "contrast-2",
+					"name": "Text (dim)",
+					"color": "#8B9AAE"
+				},
+				{
+					"slug": "light",
+					"name": "Border",
+					"color": "#1F2C3E"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#22D3EE"
+				},
+				{
+					"slug": "accent-2",
+					"name": "Accent (soft)",
+					"color": "#0B333C"
+				}
+			]
+		}
+	}
+}

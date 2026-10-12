@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Сталь",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#121722"
+				},
+				{
+					"slug": "base-2",
+					"name": "Background",
+					"color": "#0C111A"
+				},
+				{
+					"slug": "contrast",
+					"name": "Text",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "contrast-2",
+					"name": "Text (dim)",
+					"color": "#94A1B3"
+				},
+				{
+					"slug": "light",
+					"name": "Border",
+					"color": "#232B39"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#60A5FA"
+				},
+				{
+					"slug": "accent-2",
+					"name": "Accent (soft)",
+					"color": "#15314E"
+				}
+			]
+		}
+	}
+}
