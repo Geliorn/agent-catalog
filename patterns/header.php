@@ -29,7 +29,7 @@ $blog_url     = $blog_page ? get_permalink( $blog_page ) : home_url( '/' );
 		<div class="wp-block-group lagr-header-menu">
 			<!-- wp:navigation {"overlayBackgroundColor":"base","overlayTextColor":"contrast","layout":{"type":"flex","justifyContent":"left"}} -->
 			<!-- wp:navigation-link {"label":"Каталог","url":"<?php echo esc_url( $repos_url ); ?>","kind":"custom"} /-->
-			<!-- wp:navigation-link {"label":"Поставщики","url":"<?php echo esc_url( $partners_url ); ?>","kind":"custom"} /-->
+			<!-- wp:navigation-link {"label":"Сервисы","url":"<?php echo esc_url( $partners_url ); ?>","kind":"custom"} /-->
 			<!-- wp:navigation-link {"label":"Блог","url":"<?php echo esc_url( $blog_url ); ?>","kind":"custom"} /-->
 			<!-- /wp:navigation -->
 		</div>

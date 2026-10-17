@@ -6,7 +6,7 @@
  * reference install out of the box: a static "Главная" front page carrying the
  * home-standard pattern, a "Блог" posts page, the static-front options wired,
  * and rewrite rules flushed so the plugin-registered CPT archives
- * (/repos/, /contractors/) resolve.
+ * (/repos/, /services/) resolve.
  *
  * The repository / partner / article *listings* are CPT archives and the blog
  * index — they render from the theme's own templates (archive-github_repo.html,

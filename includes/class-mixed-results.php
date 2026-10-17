@@ -136,7 +136,7 @@ class Agent_Catalog_Mixed_Results {
 	/** Suppliers — plain title + excerpt + type/specialization list, capped, no pagination. */
 	private static function partner_section( $context ) {
 		$count  = self::count( 'contractor', $context );
-		$markup = self::heading( 'Поставщики', $count );
+		$markup = self::heading( 'Сервисы', $count );
 		if ( $count < 1 ) {
 			return $markup . self::empty_note();
 		}

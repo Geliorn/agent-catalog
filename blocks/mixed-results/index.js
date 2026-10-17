@@ -5,7 +5,7 @@
 	blocks.registerBlockType( 'agent-catalog/mixed-results', {
 		edit: function() {
 			var blockProps = blockEditor.useBlockProps();
-			return el( 'p', blockProps, el( 'em', null, '☰ Результаты поиска/тега — репозитории, поставщики, блог (собственный виджет, содержимое — на реальной странице)' ) );
+			return el( 'p', blockProps, el( 'em', null, '☰ Результаты поиска/тега — репозитории, сервисы, блог (собственный виджет, содержимое — на реальной странице)' ) );
 		},
 		// Dynamic block — actual markup comes from render.php on the server.
 		save: function() {

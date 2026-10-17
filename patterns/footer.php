@@ -46,7 +46,7 @@ $blog_url     = $blog_page ? get_permalink( $blog_page ) : home_url( '/' );
 			<ul class="wp-block-list lagr-footer-links">
 				<!-- wp:list-item --><li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Главная</a></li><!-- /wp:list-item -->
 				<!-- wp:list-item --><li><a href="<?php echo esc_url( $repos_url ); ?>">Все репозитории</a></li><!-- /wp:list-item -->
-				<!-- wp:list-item --><li><a href="<?php echo esc_url( $partners_url ); ?>">Поставщики</a></li><!-- /wp:list-item -->
+				<!-- wp:list-item --><li><a href="<?php echo esc_url( $partners_url ); ?>">Сервисы</a></li><!-- /wp:list-item -->
 				<!-- wp:list-item --><li><a href="<?php echo esc_url( $blog_url ); ?>">Блог</a></li><!-- /wp:list-item -->
 			</ul>
 			<!-- /wp:list -->
@@ -56,7 +56,7 @@ $blog_url     = $blog_page ? get_permalink( $blog_page ) : home_url( '/' );
 		<!-- wp:column {"width":"40%"} -->
 		<div class="wp-block-column" style="flex-basis:40%">
 			<!-- wp:heading {"level":3,"className":"lagr-footer-head"} --><h3 class="wp-block-heading lagr-footer-head">О проекте</h3><!-- /wp:heading -->
-			<!-- wp:paragraph {"fontSize":"small","textColor":"contrast-2"} --><p class="has-contrast-2-color has-text-color has-small-font-size">Каталог репозиториев с GitHub по AI-агентам, MCP и Agent Skills — собирается и обновляется автоматически, плюс каталог поставщиков-интеграторов.</p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"fontSize":"small","textColor":"contrast-2"} --><p class="has-contrast-2-color has-text-color has-small-font-size">Каталог репозиториев с GitHub по AI-агентам, MCP и Agent Skills — собирается и обновляется автоматически, плюс каталог AI-сервисов и интеграторов.</p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 
