@@ -18,6 +18,17 @@ $partners_url = get_post_type_archive_link( 'contractor' );
 $partners_url = $partners_url ? $partners_url : home_url( '/' );
 $blog_page    = get_option( 'page_for_posts' );
 $blog_url     = $blog_page ? get_permalink( $blog_page ) : home_url( '/' );
+
+// Legal pages created by Agent_Catalog_Provision; a link is skipped if its page is gone.
+$legal_links = array();
+if ( class_exists( 'Agent_Catalog_Legal' ) ) {
+	foreach ( array( 'privacy' => 'Политика обработки персональных данных', 'terms' => 'Пользовательское соглашение' ) as $role => $label ) {
+		$url = Agent_Catalog_Legal::page_url( $role );
+		if ( $url ) {
+			$legal_links[ $url ] = $label;
+		}
+	}
+}
 ?>
 <!-- wp:group {"align":"full","className":"lagr-footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|50"}},"border":{"top":{"color":"var:preset|color|light","width":"1px"}}},"backgroundColor":"base","layout":{"type":"constrained","contentSize":"1100px"}} -->
 <div class="wp-block-group alignfull lagr-footer has-base-background-color has-background" style="border-top-color:var(--wp--preset--color--light);border-top-width:1px;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--50)">
@@ -71,6 +82,15 @@ $blog_url     = $blog_page ? get_permalink( $blog_page ) : home_url( '/' );
 			<!-- wp:site-title {"level":0,"isLink":true} /-->
 		</div>
 		<!-- /wp:group -->
+		<?php if ( $legal_links ) : ?>
+		<!-- wp:group {"className":"lagr-footer-legal","style":{"spacing":{"blockGap":"0.4em 1.2em"}},"fontSize":"small","textColor":"contrast-2","layout":{"type":"flex","flexWrap":"wrap"}} -->
+		<div class="wp-block-group lagr-footer-legal has-contrast-2-color has-text-color has-small-font-size">
+			<?php foreach ( $legal_links as $url => $label ) : ?>
+			<!-- wp:paragraph --><p><a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $label ); ?></a></p><!-- /wp:paragraph -->
+			<?php endforeach; ?>
+		</div>
+		<!-- /wp:group -->
+		<?php endif; ?>
 	</div>
 	<!-- /wp:group -->
 

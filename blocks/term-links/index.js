@@ -17,6 +17,7 @@
 						value: a.taxonomy,
 						options: [
 							{ label: 'Темы (repo_topic)', value: 'repo_topic' },
+							{ label: 'Рубрики блога (category)', value: 'category' },
 							{ label: 'Теги (post_tag)', value: 'post_tag' },
 							{ label: 'Языки (repo_language)', value: 'repo_language' },
 							{ label: 'Лицензии (repo_license)', value: 'repo_license' }
@@ -34,6 +35,30 @@
 						label: 'Показывать счётчик',
 						checked: a.showCount,
 						onChange: function( v ) { props.setAttributes( { showCount: v } ); }
+					} ),
+					el( components.SelectControl, {
+						label: 'Сортировка',
+						value: a.orderBy,
+						options: [
+							{ label: 'По числу записей (все типы)', value: 'count' },
+							{ label: 'По числу статей блога', value: 'posts' },
+							{ label: 'По оценкам репозиториев', value: 'likes' }
+						],
+						onChange: function( v ) { props.setAttributes( { orderBy: v } ); }
+					} ),
+					el( components.SelectControl, {
+						label: 'Вид',
+						value: a.display,
+						options: [
+							{ label: 'Список ссылок', value: 'list' },
+							{ label: 'Пилюли', value: 'pills' }
+						],
+						onChange: function( v ) { props.setAttributes( { display: v } ); }
+					} ),
+					el( components.TextControl, {
+						label: 'Пункт «все» (пусто — не показывать)',
+						value: a.allLabel,
+						onChange: function( v ) { props.setAttributes( { allLabel: v } ); }
 					} )
 				)
 			);

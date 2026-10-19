@@ -13,6 +13,12 @@ Agent_Catalog_Search::init();
 require_once get_theme_file_path( 'includes/class-provision.php' );
 Agent_Catalog_Provision::init();
 
+require_once get_theme_file_path( 'includes/class-legal.php' );
+Agent_Catalog_Legal::init();
+
+require_once get_theme_file_path( 'includes/class-blog-loop.php' );
+Agent_Catalog_Blog_Loop::init();
+
 if ( ! function_exists( 'agent_catalog_register_blocks' ) ) :
 	function agent_catalog_register_blocks() {
 		register_block_type( get_theme_file_path( 'blocks/mixed-results' ) );

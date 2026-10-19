@@ -9,7 +9,9 @@
 		"taxonomy": { "type": "string", "default": "repo_topic" },
 		"number": { "type": "number", "default": 8 },
 		"showCount": { "type": "boolean", "default": false },
-		"orderBy": { "type": "string", "default": "count" }
+		"orderBy": { "type": "string", "default": "count" },
+		"display": { "type": "string", "default": "list" },
+		"allLabel": { "type": "string", "default": "" }
 	},
 	"supports": { "html": false },
 	"render": "file:./render.php",
